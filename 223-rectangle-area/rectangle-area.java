@@ -12,7 +12,7 @@ class Solution {
         int top=Math.min(D,H);
 
         int c=0;
-
+          //yaha c mtlb overlapping haiiii
         if(right>left && top>bottom){
             c=(right-left)*(top-bottom);
         }
