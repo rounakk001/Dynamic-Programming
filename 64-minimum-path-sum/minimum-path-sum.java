@@ -16,12 +16,24 @@ class Solution {
           int left=helper(i,j-1,dp,grid);
           int up=helper(i-1,j,dp,grid);
 
-          int min=Math.min(left,up); 
-          //ye jaruri hai taaki overflow na ho 
-          if(min==Integer.MAX_VALUE)
-          return dp[i][j]=Integer.MAX_VALUE;
+          if(left!=Integer.MAX_VALUE){
+            left=grid[i][j]+left;
+          }
 
-          return  dp[i][j]=grid[i][j]+min;
+          if(up!=Integer.MAX_VALUE){
+            up=grid[i][j]+up;
+          }
+          
+          return  dp[i][j]=Math.min(left,up);
+
+        
+        //   int min=Math.min(left,up); 
+
+        //   ye jaruri hai taaki overflow na ho 
+        //       if(min==Integer.MAX_VALUE)
+        //       return dp[i][j]=Integer.MAX_VALUE;
+
+            
 
 
     }
