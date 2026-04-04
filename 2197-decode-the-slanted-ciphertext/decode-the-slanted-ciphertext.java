@@ -1,7 +1,6 @@
 class Solution {
     public String decodeCiphertext(String s, int rows) {
-        if(rows==0)   //edge cases
-        return "";
+      
         if(rows==1)
         return s;   //edge cases
        int column=s.length()/rows;
