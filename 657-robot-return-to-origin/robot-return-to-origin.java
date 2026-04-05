@@ -5,13 +5,13 @@ class Solution {
         if(moves.charAt(k)=='L'){
             j=j-1;
         }
-        if(moves.charAt(k)=='R'){
+        else if(moves.charAt(k)=='R'){
             j=j+1;
         }
-        if(moves.charAt(k)=='D'){
+        else if(moves.charAt(k)=='D'){
             i=i+1;
         }
-        if(moves.charAt(k)=='U'){
+        else if(moves.charAt(k)=='U'){
             i=i-1;
         }
        } 
