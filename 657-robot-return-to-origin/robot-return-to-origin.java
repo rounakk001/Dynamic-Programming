@@ -15,9 +15,6 @@ class Solution {
             i=i-1;
         }
        } 
-       if(i==0 && j==0)
-       return true ;
-       else
-       return false;
+       return (i==0 && j==0);
     }
 }
