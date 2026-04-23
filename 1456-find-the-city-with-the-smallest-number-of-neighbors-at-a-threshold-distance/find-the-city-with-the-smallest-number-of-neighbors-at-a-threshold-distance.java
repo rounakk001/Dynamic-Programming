@@ -77,7 +77,7 @@ class Solution {
                 }
             }
 
-            // choose minimum, tie → larger index
+            
             if (count <= minCount) {
                 minCount = count;
                 resultCity = src;
