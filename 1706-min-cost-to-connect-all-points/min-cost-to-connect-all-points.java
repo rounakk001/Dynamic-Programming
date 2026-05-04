@@ -9,6 +9,8 @@ class Pair {
 class Solution {
     public int minCostConnectPoints(int[][] points) {
         int n = points.length;
+        if(n==1)
+        return 0;
 
         PriorityQueue<Pair> pq = new PriorityQueue<>(
             (a, b) -> a.distance - b.distance
