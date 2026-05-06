@@ -1,24 +1,23 @@
-import java.util.*;
-
 class Solution {
     public int[] topKFrequent(int[] nums, int k) {
-        // Use a HashMap for frequency counting (O(1) access is faster than TreeMap)
+        
+        // Step 1: Frequency map
         HashMap<Integer, Integer> map = new HashMap<>();
-
         for (int num : nums) {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
 
-        // Convert Map entries to a List to sort them
-        List<Map.Entry<Integer, Integer>> list = new ArrayList<>(map.entrySet());
+        // Step 2: Max Heap based on frequency
+        PriorityQueue<Integer> pq = new PriorityQueue<>(
+            (a, b) -> map.get(b) - map.get(a)
+        );
 
-        // Sort the list based on values (frequencies) in descending order
-        Collections.sort(list, (a, b) -> b.getValue() - a.getValue());
+        pq.addAll(map.keySet());
 
-        // Extract the top K keys
+        // Step 3: Extract top k
         int[] res = new int[k];
         for (int i = 0; i < k; i++) {
-            res[i] = list.get(i).getKey();
+            res[i] = pq.poll();
         }
 
         return res;
