@@ -1,16 +1,20 @@
 class Solution {
     public int majorityElement(int[] nums) {
-        HashMap<Integer,Integer> map=new HashMap<>();
-        for(int i=0;i<nums.length;i++){
-            map.put(nums[i],map.getOrDefault(nums[i],0)+1);
-        }
-   
-        for(Integer key:map.keySet()){
-            if(map.get(key)>(nums.length/2)){
-                return key;
-            }
-        }
+      int answer=0;
+      int count=0;
 
-        return 0;
+      for(int num:nums){   //count=0 ka matlab answer 2 different element ko cancel out kr rahe
+        if(count==0)
+        answer=num;
+
+        if(answer==num){
+            count++;
+        }
+        else
+            count--;
+      }
+
+        return answer;
     }
+  
 }
