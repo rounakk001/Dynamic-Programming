@@ -15,7 +15,7 @@
  */
 class Solution {
     private int sum = 0;
-    
+    //-----------------REVERSE INORDER TRAVERSAL-----------------------------
     public TreeNode bstToGst(TreeNode root) {  
         if (root != null) {
             bstToGst(root.right);  // Traverse the right subtree
