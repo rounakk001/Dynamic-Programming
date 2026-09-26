@@ -7,11 +7,7 @@ class Solution {
 
             Arrays.sort(chars);
 
-            String key="";
-
-            for(char c:chars){
-                key+=c;
-            }
+            String key=new String(chars);
 
             if(!map.containsKey(key)){
                 map.put(key,new ArrayList<>());
